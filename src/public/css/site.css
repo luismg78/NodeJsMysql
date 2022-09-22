@@ -1,0 +1,27 @@
+:root{
+    --pl-primary: #612232;
+    --pl-secondary: #b09a5b;
+}
+
+body{
+    background-color: #f2f5f7;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    color: var(--pl-secondary);
+    text-decoration: none;
+}
+a:hover{
+        color: var(--pl-primary);
+        text-decoration: underline;
+    }
+
+.btn-pl-primary{
+    background-color: var(--pl-primary);
+    color: #fff;
+}    
+    .btn-pl-primary:focus, .btn-pl-primary:hover{
+        background-color: var(--pl-secondary)!important;
+    }    
