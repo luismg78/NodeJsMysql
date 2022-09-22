@@ -17,13 +17,13 @@ app.set('views', path.join(__dirname, 'views'));
 //variables de entorno
 dotenv.config({path: `${path.join(__dirname, 'env', '.env')}`});
 
-//cookies
-// app.use(cookieParser);
-
 //middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended : false }));
 app.use(express.json());
+
+//cookies
+app.use(cookieParser());
 
 //rutas
 app.use('/', homeRoutes);

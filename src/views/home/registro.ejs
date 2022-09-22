@@ -1,7 +1,52 @@
 <%- include('../layouts/_encabezado') %>
 
-<h1>Registro de usuario</h1>
-
-<a href="/">regresar</a>
+    <form action="/registro" method="post" class="needs-validation" novalidate>
+        <div class="col-10 col-md-6 col-lg-3 mx-auto my-5 p-4" style="box-shadow:0px 12px 23px 4px #e2e2e2;">
+            <div class="text-center mb-4">
+                <img src="images/pladse.png" alt="logo" class="w-100" />
+                <h5>Registro de usuario</h5>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="Nombre" placeholder="Nombre" value="<%= data.Nombre %>" required autofocus>
+                <label for="Nombre">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="PrimerApellido" placeholder="Primer Apellido" value="<%= data.PrimerApellido %>" required>
+                <label for="PrimerApellido">Primer Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="SegundoApellido" placeholder="Segundo Apellido" value="<%= data.SegundoApellido %>">
+                <label for="SegundoApellido">Segundo Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="CorreoElectronico" placeholder="Correo Electrónico" value="<%= data.CorreoElectronico %>" required>
+                <label for="CorreoElectronico">Correo Electrónico</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="Password" placeholder="Contraseña" value="<%= data.Password %>" required>
+                <label for="Password">Contraseña</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" name="FechaInicio" placeholder="Fecha Inicio" value="<%= data.FechaInicio %>" required>
+                <label for="FechaInicio">Fecha Inicio</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" name="FechaTermino" placeholder="Fecha Término" value="<%= data.FechaTermino %>" required>
+                <label for="FechaTermino">Fecha Término</label>
+            </div>
+            <div class="form-check form-switch mb-4">
+                <% if(data.Activo) { %> 
+                    <input class="form-check-input" type="checkbox" role="switch" name="Activo" checked>
+                <% } else { %>
+                    <input class="form-check-input" type="checkbox" role="switch" name="Activo">
+                <% } %>
+                <label class="form-check-label" for="Activo">Marcar la casilla si desea activar al usuario</label>
+            </div>
+            <div class="text-end">
+                <a href="/" class="me-3">Regresar</a>
+                <button class="btn btn-pl-primary" type="submit">Guardar</button>
+            </div>
+        </div>
+    </div>
 
 <%- include('../layouts/_pie') %>

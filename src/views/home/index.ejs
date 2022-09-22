@@ -1,24 +1,5 @@
-<%- include('../layouts/_encabezado') %>
+<%- include('../layouts/_encabezadoMenu') %>
 
-<form action="/iniciarSesion" method="post" class="account">
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="CorreoElectronico" name="CorreoElectronico" placeholder="correo@example.com">
-        <label for="CorreElectronico">Corre Electrónico</label>
-    </div>
-    <div class="form-floating mb-5">
-        <input type="password" class="form-control" id="Password" name="Password" placeholder="Contraseña">
-        <label for="Password">Contraseña</label>
-    </div>
-    <div class="my-4">
-        <span id="mensajeLabel" class="text-danger"></span>
-    </div>
-    <div class="text-end">
-        <button class="btn btn-pl-primary" type="button" id="iniciarSesionButton" onclick="iniciarSesion(event);">Iniciar Sesión</button>
-    </div>
-    <div class="my-5">
-        <a href="/registro" class="me-2">¿Aún no tienes cuenta?</a>|
-        <a href="/recuperarPwd" class="ms-2">¿Olvidaste tu contraseña?</a>
-    </div>
-</form>
+<h1>Cuenta de usuario</h1>
 
-<%- include('../layouts/_pie') %>
+<%- include('../layouts/_pieMenu') %>

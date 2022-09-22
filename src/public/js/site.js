@@ -1,3 +1,22 @@
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+  
 function iniciarSesion(e){
     e.preventDefault();
     $.ajax({
@@ -12,7 +31,7 @@ function iniciarSesion(e){
             if(result.error){
                 $('#mensajeLabel')[0].innerHTML = result.mensaje;
             }else{
-                $('#mensajeLabel')[0].innerHTML = 'Si pasó';
+                window.location.href = "/";
             }
         },
         error: function(result){
